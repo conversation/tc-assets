@@ -7,8 +7,6 @@ A package containing sharable TC assets, including:
 
 ## Usage
 
-Installing this package will also install the appropriate version of eslint and the base airbnb configuration to match the configured rules.
-
 ```
 npm i -D conversation/tc-assets#0.0.2
 ```
