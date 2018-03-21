@@ -1,6 +1,6 @@
 {
   "name": "tc-assets",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "The assets for The Conversation",
   "main": "index.js",
   "scripts": {
