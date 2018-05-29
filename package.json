@@ -9,6 +9,7 @@
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
     "spec": "jest",
+    "test": "jest",
     "spec:watch": "jest --watch"
   },
   "repository": {
