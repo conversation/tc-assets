@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "spec": "jest",
+    "spec:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -33,6 +35,10 @@
     "@storybook/storybook-deployer": "^2.3.0",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^23.0.1",
+    "jquery": "^3.3.1",
     "react-storybook-addon-chapters": "^2.1.5"
   }
 }
