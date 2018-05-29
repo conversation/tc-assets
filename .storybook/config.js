@@ -5,7 +5,7 @@ import { setOptions } from '@storybook/addon-options';
 import { action, configureActions } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import chaptersAddon, { setDefaults } from 'react-storybook-addon-chapters';
-import Welcome from './welcome.js';
+import Welcome from './Welcome/';
 import './styles.css';
 
 setOptions({

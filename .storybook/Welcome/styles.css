@@ -1,0 +1,24 @@
+:local .storybookHeader {
+  clear: both;
+  color: rgb(54, 58, 69);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+:local h1.storybookHeader {
+  font-size: 36px;
+}
+
+:local h2.storybookHeader {
+  font-size: 25px;
+}
+
+:local h3.storybookHeader {
+  font-size: 18px;
+}
+
+:local .image {
+  clear: both;
+  display: block;
+  margin-bottom: 20px;
+}
