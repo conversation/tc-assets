@@ -1,120 +1,116 @@
+import $ from "jquery";
 import React from "react";
-import { shallow } from "enzyme";
-import Button from "./index";
+import Button from "./";
 import styles from "./styles.css";
+import { mount } from "enzyme";
 
 describe('<Button />', () => {
   describe("when props.onClick is present", () => {
-    def("wrapper", () => shallow(<Button onClick={$onClick}>Click Me!</Button>));
-    def("onClick", () => sinon.spy());
-    it("is a button", () => {
-      expect($wrapper.find("button")).to.have.length(1);
+    const onClick = jest.fn();
+    const wrapper = mount(<Button onClick={onClick}>Click Me!</Button>);
+
+    test("is a button", () => {
+      expect(wrapper.find("button")).toHaveLength(1);
     });
 
-    it("has the house style", () => {
-      expect($wrapper.find(`button.${styles.button}`)).to.have.length(1);
+    test("has the house style", () => {
+      expect(wrapper.find("button").hasClass([styles.button])).toEqual(true);
     });
 
-    it("has the contents from props.children", () => {
-      expect($wrapper.find("button").text()).to.eql("Click Me!");
+    test("has the contents from props.children", () => {
+      expect(wrapper.find("button").text()).toEqual("Click Me!");
     });
 
     describe("when clicked", () => {
-      it("calls props.onClick", () => {
-        $wrapper.find("button").simulate("click", { preventDefault: () => {} });
-        expect($onClick.called).to.eql(true);
+      test("calls props.onClick", () => {
+        wrapper.find("button").simulate("click");
+        expect(onClick).toHaveBeenCalled();
       });
     });
   });
 
   describe("when props.href is present", () => {
-    def("wrapper", () => shallow(<Button href="going.places">Linked Up!</Button>));
-    it("is an anchor", () => {
-      expect($wrapper.find("a")).to.have.length(1);
+    const wrapper = mount(<Button href="going.places">Linked Up!</Button>);
+    test("is an anchor", () => {
+      expect(wrapper.find("a")).toHaveLength(1);
     });
 
-    it("has the house style", () => {
-      expect($wrapper.find(`a.${styles.button}`)).to.have.length(1);
+    test("has the house style", () => {
+      expect(wrapper.find("a").hasClass([styles.button])).toEqual(true);
     });
 
-    it("has the contents from props.children", () => {
-      expect($wrapper.find("a").text()).to.eql("Linked Up!");
+    test("has the contents from props.children", () => {
+      expect(wrapper.find("a").text()).toEqual("Linked Up!");
     });
 
-    it("sets the anchor's HREF", () => {
-      expect($wrapper.find("a").props().href).to.eql("going.places");
+    test("sets the anchor's HREF", () => {
+      expect(wrapper.find("a").props().href).toEqual("going.places");
     });
   });
 
   describe("props.disabled", () => {
-    def("wrapper", () => shallow(<Button disabled={$disabled} />));
+    const wrapper = mount(<Button disabled={true}>Button text</Button>);
 
     describe("when true", () => {
-      def("disabled", () => true);
-      it("disables the button", () => {
-        expect($wrapper.props().disabled).to.eql(true);
+      test("disables the button", () => {
+        expect(wrapper.props().disabled).toEqual(true);
       });
     });
 
     describe("when false", () => {
-      def("disabled", () => false);
-      it("enables the button", () => {
-        expect($wrapper.props().disabled).to.eql(false);
+      const wrapper = mount(<Button disabled={false}>Button text</Button>);
+      test("enables the button", () => {
+        expect(wrapper.props().disabled).toEqual(false);
       });
     });
   });
 
   describe("props.position", () => {
-    def("wrapper", () => shallow(<Button position={$position} />));
+    const wrapper = mount(<Button position={""}>Button text</Button>);
 
     describe("when blank", () => {
-      def("position", () => "");
-      it("sets no position style", () => {
-        expect($wrapper.hasClass(styles.left)).to.eql(false);
-        expect($wrapper.hasClass(styles.right)).to.eql(false);
+      test("sets no position style", () => {
+        expect(wrapper.find("button").hasClass(styles.left)).toEqual(false);
+        expect(wrapper.find("button").hasClass(styles.right)).toEqual(false);
       });
     });
 
     describe("when left", () => {
-      def("position", () => "left");
-      it("adds the left style", () => {
-        expect($wrapper.hasClass(styles.left)).to.eql(true);
+      const wrapper = mount(<Button position={"left"}>Button text</Button>);
+      test("adds the left style", () => {
+        expect(wrapper.find("button").hasClass(styles.left)).toEqual(true);
       });
     });
 
     describe("when right", () => {
-      def("position", () => "right");
-      it("adds the right style", () => {
-        expect($wrapper.hasClass(styles.right)).to.eql(true);
+      const wrapper = mount(<Button position={"right"}>Button text</Button>);
+      test("adds the right style", () => {
+        expect(wrapper.find("button").hasClass(styles.right)).toEqual(true);
       });
     });
   });
 
   describe("props.size", () => {
-    def("wrapper", () => shallow(<Button size={$size} />));
-
     describe("when 'large'", () => {
-      def("size", () => "large");
-      it("adds large style", () => {
-        expect($wrapper.hasClass(styles.large)).to.eql(true);
+      const wrapper = mount(<Button size={"large"}>Button text</Button>);
+      test("adds large style", () => {
+        expect(wrapper.find("button").hasClass(styles.large)).toEqual(true);
       });
     });
   });
 
   describe("props.type", () => {
-    def("wrapper", () => shallow(<Button type={$type} />));
-
     describe("when 'primary'", () => {
-      def("type", () => "primary");
-      it("adds primary style", () => {
-        expect($wrapper.hasClass(styles.primary)).to.eql(true);
+      const wrapper = mount(<Button type={"primary"}>Button text</Button>);
+      test("adds primary style", () => {
+        expect(wrapper.find("button").hasClass(styles.primary)).toEqual(true);
       });
     });
 
     describe("when 'danger'", () => {
-      def("type", () => "danger");
-      it("adds danger style", () => {
-        expect($wrapper.hasClass(styles.danger)).to.eql(true);
+      const wrapper = mount(<Button type={"danger"}>Button text</Button>);
+      test("adds danger style", () => {
+        expect(wrapper.find("button").hasClass(styles.danger)).toEqual(true);
       });
     });
   });
