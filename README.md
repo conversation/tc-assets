@@ -25,3 +25,12 @@ Then you can upgrade each project to use that new version:
 ```
 npm i -D conversation/tc-assets#7.6.5
 ```
+
+## Storybook
+
+[Storybook](https://storybook.js.org/) is a UI development environment we're using for our UI
+components and design guide. To run Storybook locally from your command line:
+
+```
+npm run storybook
+```

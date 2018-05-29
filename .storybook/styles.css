@@ -1,0 +1,29 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  padding: 20px;
+  margin: 0;
+}
+
+.storybook-header {
+  clear: both;
+  color: rgb(54, 58, 69);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+h1.storybook-header {
+  font-size: 36px;
+}
+
+h2.storybook-header {
+  font-size: 25px;
+}
+
+h3.storybook-header {
+  font-size: 18px;
+}
+
+.section-subsection-title {
+  clear: both;
+  padding-top: 20px;
+}
