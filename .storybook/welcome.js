@@ -1,9 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import logoEn from './logo-en.svg';
 import Swatch from './Swatch/'
 
 storiesOf("Welcome", module).add("Introduction", () => (
-  <h1 class="storybook-header">Introduction</h1>
+  <div>
+    <img src={logoEn} />
+    <p>Welcome to the The Conversation design guide.</p>
+    <p>It contains examples of the React components we use in our apps.</p>
+  </div>
 ));
 
 storiesOf("Welcome", module).add("Colours", () => (
