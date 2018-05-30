@@ -4,12 +4,10 @@
   "description": "The assets for The Conversation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages",
-    "spec": "jest",
     "test": "jest",
+    "storybook": "build-storybook -c .storybook -o dist",
+    "start-storybook": "start-storybook -p 6006",
+    "spec": "jest",
     "spec:watch": "jest --watch"
   },
   "repository": {
@@ -33,7 +31,6 @@
     "@storybook/addon-options": "^3.4.6",
     "@storybook/addons": "^3.4.6",
     "@storybook/react": "^3.4.6",
-    "@storybook/storybook-deployer": "^2.3.0",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "enzyme": "^3.3.0",
