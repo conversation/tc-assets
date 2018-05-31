@@ -4,7 +4,7 @@ import { doc } from 'storybook-readme';
 import README from './README.md';
 import Spinner from "./index";
 
-storiesOf('Spinner', module).add('Documentation', doc(README));
+storiesOf('Spinner', module).add('Overview', doc(README));
 storiesOf("Spinner", module).addWithChapters('Display',  {
   chapters: [
     {
