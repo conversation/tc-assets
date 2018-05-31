@@ -13,14 +13,14 @@ storiesOf("Spinner", module).addWithChapters('Display',  {
           title: "Default",
           info: "The default spinner is used to indicate to the user that something is happening.",
           sectionFn: () => (
-            <Spinner title="Hello">Button text</Spinner>
+            <Spinner title="Hello" />
           )
         }, {
           title: "Enabled",
           info: "If set to false, the spinner is no longer shown.",
           subtitle: "Default set to true",
           sectionFn: () => (
-            <Spinner enabled={false}>Button text</Spinner>
+            <Spinner enabled={false} />
           )
         }
       ]
