@@ -1,0 +1,17 @@
+@keyframes :local(spinnerKeyframes) {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+:local .spinner {
+  animation: spinnerKeyframes 0.8s infinite linear;
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 0 auto;
+  border: 3px solid #d9f3fc;
+  border-top: 3px solid #33bef2;
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+  transition: opacity 500ms;
+}
