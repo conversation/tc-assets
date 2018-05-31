@@ -6,5 +6,5 @@ The Spinner indicates that something is loading, and the user has to wait.
 
  propName | propType | defaultValue | isRequired
 ----------|----------|--------------|:----------:
- enabled  | Boolean  | true         |
+ visible  | Boolean  | true         |
  title    | String   | "Loading"    |
