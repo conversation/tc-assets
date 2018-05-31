@@ -10,9 +10,8 @@ storiesOf("Spinner", module).addWithChapters('Display',  {
     {
       sections: [
         {
-          title: "Standard",
-          subtitle: "Default set to 'loading'",
-          info: "Indicates a neutral informative change or action.",
+          title: "Default",
+          info: "The default spinner is used to indicate to the user that something is happening.",
           sectionFn: () => (
             <Spinner title="Hello">Button text</Spinner>
           )
