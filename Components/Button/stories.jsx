@@ -2,17 +2,20 @@ import React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import chaptersAddon from 'react-storybook-addon-chapters';
+import { doc } from 'storybook-readme';
+import README from './README.md';
 import Button from "./index";
 
 setAddon(chaptersAddon);
-
-storiesOf("Button", module).addWithChapters('Display',  {
+storiesOf('Button', module).add('Overview', doc(README));
+storiesOf("Button", module).addWithChapters('Display', {
   chapters: [
     {
       sections: [
         {
           title: "Standard",
           info: "Indicates a neutral informative change or action.",
+          subtitle: "Default",
           sectionFn: () => (
             <Button onClick={action("Button Clicked")}>Button text</Button>
           )
@@ -57,7 +60,8 @@ storiesOf("Button", module).addWithChapters('Display',  {
     {
       sections: [
         {
-          title: "Default size",
+          title: "Regular",
+          subtitle: "Default",
           sectionFn: () => (
             <Button onClick={action("Button Clicked")}>Button text</Button>
           )
