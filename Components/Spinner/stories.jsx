@@ -15,13 +15,6 @@ storiesOf("Spinner", module).addWithChapters('Display',  {
           sectionFn: () => (
             <Spinner title="Hello" />
           )
-        }, {
-          title: "Enabled",
-          info: "If set to false, the spinner is no longer shown.",
-          subtitle: "Default set to true",
-          sectionFn: () => (
-            <Spinner enabled={false} />
-          )
         }
       ]
     }
