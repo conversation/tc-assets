@@ -7,7 +7,7 @@ import README from './README.md';
 import Button from "./index";
 
 setAddon(chaptersAddon);
-storiesOf('Button', module).add('Documentation', doc(README));
+storiesOf('Button', module).add('Overview', doc(README));
 storiesOf("Button", module).addWithChapters('Display', {
   chapters: [
     {
