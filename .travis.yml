@@ -4,6 +4,7 @@ node_js:
 
 deploy:
   provider: script
+  skip-cleanup: true
   script: npm run deploy-storybook -- --ci
   on:
     branch: master
