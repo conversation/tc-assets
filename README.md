@@ -9,9 +9,22 @@ A package containing sharable TC assets, including:
 
     npm i -D conversation/tc-assets#0.0.2
 
-## Making changes
+## Design Guide
 
-If you add assets to the tc-assets package, you should also bump the minor version, and push up a new tag matching the latest version. If there are drastic changes, consider bumping the major version.
+We maintain a design guide of all the shared componenets in this library using
+the [Storybook](https://storybook.js.org/) tool. The design guide is
+automatically published [here](https://conversation.github.com/tc-assets), and
+may be browsed to see the different uses for each component.
+
+If you want to work on our design guide, then you need to run Storybook:
+
+    npm run start-storybook
+
+## Making Changes
+
+If you add assets to the tc-assets package, you should also bump the minor
+version, and push up a new tag matching the latest version. If there are
+drastic changes, consider bumping the major version.
 
     git commit -m "Prepare to release 7.6.5"
     git tag -a 7.6.5 -m "7.6.5"
@@ -20,10 +33,3 @@ If you add assets to the tc-assets package, you should also bump the minor versi
 Then you can upgrade each project to use that new version:
 
     npm i -D conversation/tc-assets#7.6.5
-
-## Storybook
-
-[Storybook](https://storybook.js.org/) is a UI development environment we're using for our UI
-components and design guide. To run Storybook locally from your command line:
-
-    npm run start-storybook
