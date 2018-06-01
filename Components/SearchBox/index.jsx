@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { throttle } from "underscore";
+import { throttle } from "lodash";
 import styles from "./styles.css";
 
 export default class SearchBox extends React.Component {
