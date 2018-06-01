@@ -13,7 +13,7 @@ A package containing sharable TC assets, including:
 
 We maintain a design guide of all the shared componenets in this library using
 the [Storybook](https://storybook.js.org/) tool. The design guide is
-automatically published [here](https://conversation.github.com/tc-assets), and
+automatically published [here](https://design.theconversation.com/), and
 may be browsed to see the different uses for each component.
 
 If you want to work on our design guide, then you need to run Storybook:
