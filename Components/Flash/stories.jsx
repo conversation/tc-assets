@@ -24,6 +24,6 @@ stories.add("Notice", () => (
   <Flash message={text("Message", "A flash message")} type="alert" />
 ))
 .add("Fade", () => (
-  <Flash message={text("Message", "A flash message")} type="notice" fade={boolean('Fade', false)} />
+  <Flash message={text("Message", "A flash message")} fade={boolean('Fade', false)} />
 ));;
 
