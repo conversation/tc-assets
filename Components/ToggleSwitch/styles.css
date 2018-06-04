@@ -1,0 +1,62 @@
+:local .hidden {
+  display: none;
+}
+
+:local .switch {
+  --switch-height: 25px;
+  --switch-off-background-color: #fafafa;
+  --switch-on-background-color: #00be00;
+  --switch-radius: 34px;
+  --switch-width: 60px;
+  --switch-toggle-color: #FFF;
+  --switch-toggle-radius: 50%;
+  --switch-toggle-spacing: -2px;
+  --switch-toggle-radius: 25px;
+
+  --animation-speed: .4s;
+
+  position: relative;
+  display: inline-block;
+  padding-right: var(--switch-width) + 10px;
+  height: var(--switch-height);
+  line-height: var(--switch-height);
+  font-weight: bold;
+}
+
+:local .toggle {
+  background-color: var(--switch-off-background-color);
+  border-radius: var(--switch-radius);
+  cursor: pointer;
+  position: absolute;
+  transition: var(--animation-speed);
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: var(--switch-width);
+
+  bottom: 0;
+  right: calc(-20px - var(--switch-width) );
+  top: 0;
+}
+
+:local .toggle:before {
+  background-color: var(--switch-toggle-color);
+  border-radius: var(--switch-toggle-radius);
+  content: "";
+  position: absolute;
+  transition: var(--animation-speed);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid #ccc;
+  bottom: var(--switch-toggle-spacing);
+  height: var(--switch-toggle-radius);
+  left: var(--switch-toggle-spacing);
+  width: var(--switch-toggle-radius);
+}
+
+:local(.switch > input:checked + .toggle) {
+  background-color: var(--switch-on-background-color);
+  border: 1px solid var(--switch-on-background-color);
+}
+
+:local(.switch > input:checked + .toggle:before) {
+  transform: translateX(calc(var(--switch-width) - var(--switch-toggle-radius) - var(--switch-toggle-spacing) * 2));
+}
