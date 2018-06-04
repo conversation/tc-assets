@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="storybook-version" content="3.4.6">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <title>Storybook</title>
+    <style>
+        /*
+          When resizing panels, the drag event breaks if the cursor
+          moves over the iframe. Add the 'dragging' class to the body
+          at drag start and remove it when the drag ends.
+         */
+        .dragging iframe {
+            pointer-events: none;
+        }
+
+        /* Styling the fuzzy search box placeholders */
+        .searchBox::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: #ddd;
+            font-size: 16px;
+        }
+
+        .searchBox::-moz-placeholder { /* Firefox 19+ */
+            color: #ddd;
+            font-size: 16px;
+        }
+
+        .searchBox:focus{
+            border-color: #EEE !important;
+        }
+
+        .btn:hover{
+            background-color: #eee
+        }
+    </style>
+    <style>
+  a[href='https://theconversation.com'] {
+    background: url('data:image/png;base64,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') no-repeat left top;
+    height: 60px;
+    width: 60px;
+    border: none !important;
+    margin: 5px;
+  }
+
+  a[href='https://theconversation.com'] + button {
+    display: none;
+  }
+
+  a[href='https://theconversation.com'] > h3 {
+    display: none;
+  }
+</style>
+
+
+</head>
+<body style="margin: 0;">
+    <div id="root"></div>
+<script type="text/javascript" src="static/manager.6e8b1f58c4401a8d8764.bundle.js"></script></body>
+</html>
