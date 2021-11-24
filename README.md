@@ -1,3 +1,7 @@
+# Deprecation notice
+
+This repository has been replaced with https://github.com/conversation/ui
+
 # tc-assets
 
 A package containing sharable TC assets, including:
